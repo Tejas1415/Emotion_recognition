@@ -35,7 +35,8 @@ set(0, 'defaultfigurewindowstyle', 'docked')
 fig = figure('Name', 'Eotion Recognition', 'NumberTitle', 'off');
 ax1 = subplot(2, 1, 1);
 ax2 = subplot(2, 1, 2);
-bar(ax2, zeros(1, numel(trainedClassifier.ClassificationKNN.ClassNames)), 'FaceColor', [0.2 0.6 0.8]);
+# what ever model u choose in the app, should be seen here, else an error might be caused. In this case i have chosen K- nearest neighbours algorithm.
+bar(ax2, zeros(1, numel(trainedClassifier.ClassificationKNN.ClassNames)), 'FaceColor', [0.2 0.6 0.8]); 
 set(ax2, 'XTickLabel', cellstr(trainedClassifier.ClassificationKNN.ClassNames));
 set(0, 'defaultfigurewindowstyle', 'normal')
         
