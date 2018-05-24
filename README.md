@@ -15,4 +15,4 @@ open confusion matrix and ROC curves to understand your results better. Learn ho
 
 U can open the code of each model u train in matlab and fiddle with those parameters to check if u could get better results.
 
-for any doubts mail to tejas.tkreddy@gmail.com
+for any doubts mail to tejastk.reddy@gmail.com
