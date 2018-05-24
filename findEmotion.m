@@ -1,10 +1,17 @@
 function findEmotion(trainedClassifier, bag)
-%FINDEMOTION Summary of this function goes here
+%FINDEMOTION Summary of this function goes here - 
 [fig, ax1, ax2] = figureSetup(trainedClassifier);
 
+# to activate inbuilt webcam in your laptop - go to GetHardWare Packages in your matlab toolbar and then install webcams().
+# Else it would show an error at this step
+# If you are using external webcams like logitech - u gotto install an hardware package that supports that particular webcam. 
+# Not all webcams are compatible with MATLAB
+
+# Laptop inbuilt webcam is activated. Read above comments
 wcam = webcam();
-while ishandle(fig)
-    img = snapshot(wcam);
+# or use while(1) - contineous images makes a video, so your webcam is now taking contineous shots and displaying that as a video.
+while ishandle(fig)  # Just running forever loop.
+    img = snapshot(wcam); # Take an image and then process it
     graying = rgb2gray(img);
     
     imagefeatures = double(encode(bag, graying));
@@ -21,6 +28,8 @@ while ishandle(fig)
 end
 end
 
+# Just creating a right user interface to look at the video produced and the results - For a cleaner representation
+# Not compulsory for the project.
 function [fig, ax1, ax2] = figureSetup(trainedClassifier)
 set(0, 'defaultfigurewindowstyle', 'docked')
 fig = figure('Name', 'Eotion Recognition', 'NumberTitle', 'off');
